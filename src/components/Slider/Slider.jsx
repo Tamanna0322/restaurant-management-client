@@ -6,10 +6,11 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import banner1 from '../../assets/images/banner1.webp';
 import banner2 from '../../assets/images/banner2.jpg';
 import banner3 from '../../assets/images/banner3.jpg';
+import { Link } from "react-router-dom";
 
 const Slider = () => {
     return (
-        <div className="my-10 max-w-7xl mx-auto px-4">
+        <div className="my-10">
       
         <Swiper
           
@@ -33,7 +34,7 @@ const Slider = () => {
                             <h3 className='lg:text-5xl text-white font-bold md:text-3xl text-2xl'> Savor Every <span className="text-[#d45e34]">Bite</span> with <span className="text-[#e05826]">FlavorFleet</span></h3>
                             <p className='lg:w-[60%] md:w-[80%] w-[90%] mx-auto text-white md:mt-9 mt-5'>FlavorFleet simplifies restaurant management, ensuring seamless service and unforgettable experiences for diners and staff alike.</p>
                            <div className="mt-7">
-                           <button className="btn px-8 font-bold border-none bg-gradient-to-r from-[#FFD133] to-[#C04619]">See All Foods</button>
+                           <Link to='/allFoods'><button className="btn px-8 font-bold border-none bg-gradient-to-r from-[#FFD133] to-[#C04619]">See All Foods</button></Link>
                            </div>
                         </div>
                     </div>
@@ -44,7 +45,7 @@ const Slider = () => {
                             <h3 className='lg:text-5xl text-white font-bold md:text-3xl text-2xl'> Effortless <span className="text-[#d46c34]">Dining</span> and Streamlined <span className="text-[#d46c34]">Operations</span></h3>
                             <p className='lg:w-[60%] md:w-[80%] w-[90%] mx-auto text-white md:mt-9 mt-5'>Elevate your restaurant with FlavorFleet, simplifying tasks for smoother service and exceptional dining experiences.</p>
                             <div className="mt-7">
-                           <button className="btn px-8 font-bold border-none bg-gradient-to-r from-[#FFD133] to-[#C04619]">See All Foods</button>
+                           <Link to='/allFoods'><button className="btn px-8 font-bold border-none bg-gradient-to-r from-[#FFD133] to-[#C04619]">See All Foods</button></Link>
                            </div>
                         </div>
                     </div>
@@ -55,7 +56,7 @@ const Slider = () => {
                             <h3 className='lg:text-5xl text-white font-bold md:text-3xl text-2xl'> <span className="text-[#d46c34]">Unforgettable</span> Meals</h3>
                             <p className='lg:w-[60%] md:w-[80%] w-[90%] mx-auto text-white md:mt-9 mt-5'>FlavorFleet revolutionizes restaurant management, delivering seamless operations and unforgettable dining experiences to patrons worldwide.</p>
                             <div className="mt-7">
-                           <button className="btn px-8 font-bold border-none bg-gradient-to-r from-[#FFD133] to-[#C04619]">See All Foods</button>
+                           <Link to='/allFoods'><button className="btn px-8 font-bold border-none bg-gradient-to-r from-[#FFD133] to-[#C04619]">See All Foods</button></Link>
                            </div>
                         </div>
                     </div>

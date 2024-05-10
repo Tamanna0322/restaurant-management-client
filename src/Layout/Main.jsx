@@ -9,8 +9,10 @@ const Main = () => {
             <div className="">
             <Navbar></Navbar>
             </div>
-            
+            <div className="max-w-7xl mx-auto mt-10 px-4">
             <Outlet></Outlet>
+            </div>
+       
 
             <Footer></Footer>
 
