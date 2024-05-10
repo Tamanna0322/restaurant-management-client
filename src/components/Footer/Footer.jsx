@@ -11,6 +11,9 @@ const Footer = () => {
                 </aside>
                
             </footer>
+            <div className='border-t border-[#ee825b] border-dotted'>
+
+            </div>
             <footer className=" mb-5 max-w-7xl mx-auto mt-5 px-4 ">
                 <div className='footer flex justify-around'>
                     <nav className='text-[#C04619]'>
