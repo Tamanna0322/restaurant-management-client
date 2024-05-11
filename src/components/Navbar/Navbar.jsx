@@ -1,8 +1,12 @@
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import logo from '../../assets/images/file.png';
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Navbar = () => {
+
+  const { user} = useContext(AuthContext);
 
   return (
 <div className="bg-[#C046191A]">
@@ -34,8 +38,27 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-   <Link to='/login'> <button className="">Login</button></Link>
-  </div>
+              {
+                 user ? <div className="dropdown dropdown-end md:mr-3 flex">
+                 <div tabIndex={0} role="button" className="btn btn-circle avatar tooltip tooltip-bottom" data-tip={user?.displayName || 'User name not found'}>
+                     <div className=" rounded-full">
+                         <img className="w-full" alt="" src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
+                     </div>
+                 </div>
+                                  
+                 <button className="btn md:ml-3 ml-1 text-orange-600 font-bold border-orange-700 bg-white  hover:bg-gradient-to-r from-orange-600 to-orange-500 hover:text-white">
+                            Logout
+                         </button>
+             </div>
+             
+             :
+
+             <NavLink to='/login'
+              className={({ isActive }) => isActive ? 'text-green-600 px-4 py-2 font-bold rounded-lg border border-green-700  ' : 'font-semibold text-green-800'}>
+                 Login</NavLink>
+             
+              }
+            </div>
 </div>
 
     </div>

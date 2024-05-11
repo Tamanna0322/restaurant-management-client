@@ -1,10 +1,43 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import register from '../../assets/images/register2.jpg';
+import { AuthContext } from "../../providers/AuthProvider";
+import toast from "react-hot-toast";
 
 
 const Register = () => {
+
+  const {createUser, user, setUser, updateUsersProfile } = useContext(AuthContext);
+
+
+  const handleRegister = e =>{
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+    console.log(name, email, photo, password);
+
+
+    createUser(email, password)
+    .then(result => {
+         setUser(result.user)
+         updateUsersProfile(name, photo)
+         .then(() => {
+            setUser({...user,displayName:name,photoURL:photo,email:email})
+            // navigate('/')
+           toast.success("Registration complete")
+       
+         })
+    })
+    .catch(error =>{
+      console.log(error)
+    })
+  }
+
+
 
   const [showPass, setShowPass] = useState(false);
 
@@ -15,7 +48,7 @@ const Register = () => {
         <div className="flex items-center flex-col-reverse md:flex-row lg:justify-around md:justify-between w-full h-full ">
           
           <div className="card shrink-0 mb-6 lg:w-[60%] w-full max-w-sm shadow-2xl border border-orange-700 border-dashed bg-orange-50 ">
-            <form className="card-body w-full">
+            <form onSubmit={handleRegister} className="card-body w-full">
               <div className='text-center'>
                 <p className='text-3xl font-bold text-orange-700 mb-2'>Register Now</p>
               </div>
