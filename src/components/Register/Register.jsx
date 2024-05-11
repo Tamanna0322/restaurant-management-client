@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 const Register = () => {
 
   const {createUser, user, setUser, updateUsersProfile } = useContext(AuthContext);
-
+  const [error, setError] = useState('');
 
   const handleRegister = e =>{
     e.preventDefault();
@@ -19,6 +19,13 @@ const Register = () => {
     const photo = form.photo.value;
     const password = form.password.value;
     console.log(name, email, photo, password);
+
+    if(password.length < 6){
+        setError('password must be atleast six characters')
+        return
+      }
+
+      setError('')
 
 
     createUser(email, password)
@@ -36,7 +43,6 @@ const Register = () => {
       console.log(error)
     })
   }
-
 
 
   const [showPass, setShowPass] = useState(false);
@@ -93,7 +99,7 @@ const Register = () => {
                  </span>
                 
               </div>
-             
+              {error &&  <small className='text-red-500'>{error}</small>}
               <div className="form-control mt-6">
                 <button className="btn border-none bg-gradient-to-r from-[#FFD133] to-[#C04619]">Register</button>
               </div>
