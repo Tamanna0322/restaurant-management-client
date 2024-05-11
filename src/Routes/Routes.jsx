@@ -3,6 +3,7 @@ import Main from "../Layout/Main";
 import Home from "../pages/Home/Home";
 import AllFoods from "../components/AllFoods/AllFoods";
 import Error from "../pages/Home/Error/Error";
+import Login from "../pages/Login/Login";
 
 
 const router = createBrowserRouter([
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
         {
             path: '/allFoods',
             element: <AllFoods></AllFoods>
+        },
+        {
+          path: '/login',
+          element: <Login></Login>
         }
       ]
     },

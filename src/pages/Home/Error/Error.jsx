@@ -3,7 +3,8 @@ import pizza from '../../../assets/images/404.png'
 
 const Error = () => {
     return (
-       <div className='mt-28 bg-[#f7d5c9] py-14 flex flex-col items-center'>
+      <div className='min-h-screen flex justify-center flex-col items-center'>
+         <div className='bg-[#f7d5c9] py-14 w-full'>
          <div className='flex justify-center'>
             <div className="flex items-center space-x-4">
                 <div className='md:text-9xl text-7xl text-orange-900 font-extrabold'>4</div>
@@ -22,6 +23,7 @@ const Error = () => {
                </div>
             </div>
        </div>
+      </div>
     );
 };
 
