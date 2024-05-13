@@ -54,7 +54,7 @@ const Navbar = () => {
                 <NavLink to='/add' className={({ isActive }) => isActive ? 'text-[#FF8033] px-4 py-2 font-bold rounded-lg ' : 'font-semibold text-[#FF8033]'}>Add a food item</NavLink>
                 </li>
                 <li>
-                <NavLink to='/myOrdered' className={({ isActive }) => isActive ? 'text-[#FF8033] px-4 py-2 font-bold rounded-lg ' : 'font-semibold text-[#FF8033]'}> My ordered food items</NavLink>
+                <NavLink to='/myOrder' className={({ isActive }) => isActive ? 'text-[#FF8033] px-4 py-2 font-bold rounded-lg ' : 'font-semibold text-[#FF8033]'}> My ordered food items</NavLink>
                 </li>
               </ul>
 

@@ -22,7 +22,7 @@ const AddFood = () => {
         const origin = form.origin.value;
         const name = form.name.value;
         const email = form.email.value;
-        const newFoodItem ={photo, foodName, category, quantity, description, price,origin,name,email};
+        const newFoodItem ={photo, foodName, category, quantity, description, price, origin, name, email};
         //   console.log(newFoodItem)
 
         try {
