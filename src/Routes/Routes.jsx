@@ -9,6 +9,7 @@ import AddFood from "../pages/AddFood/AddFood";
 import SingleFood from "../components/SingleFood/SingleFood";
 import Purchase from "../components/Purchase/Purchase";
 import MyAdd from "../components/MyAdd/MyAdd";
+import Update from "../components/Update/Update";
 
 
 const router = createBrowserRouter([
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
         {
           path: '/myAdd',
           element: <MyAdd></MyAdd>
+        },
+        {
+          path: '/update/:id',
+          element: <Update></Update>,
+          loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/add/${params.id}`)
         }
       ]
     },

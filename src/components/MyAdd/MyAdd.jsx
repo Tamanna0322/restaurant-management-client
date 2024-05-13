@@ -7,7 +7,7 @@ import Item from "../Item/Item";
 const MyAdd = () => {
  
     const { user } = useContext(AuthContext);
-    console.log(user)
+  
 
     const [item, setItem] = useState([]);
     useEffect(()=>{
