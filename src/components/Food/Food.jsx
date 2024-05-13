@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 
 const Food = ({ food }) => {
@@ -24,7 +25,7 @@ const Food = ({ food }) => {
 
 
                 <div className='flex justify-center mb-4'>
-                    <button className='btn w-1/2 border-none bg-gradient-to-r from-[#FFD133] to-[#C04619]'>Details</button>
+                   <Link to={`/food/${food._id}`}> <button className='btn border-none px-9 bg-gradient-to-r from-[#FFD133] to-[#C04619]'>Details</button></Link>
                 </div>
             </div>
 

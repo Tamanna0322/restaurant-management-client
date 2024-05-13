@@ -6,6 +6,8 @@ import Error from "../pages/Home/Error/Error";
 import Login from "../pages/Login/Login";
 import Register from "../components/Register/Register";
 import AddFood from "../pages/AddFood/AddFood";
+import SingleFood from "../components/SingleFood/SingleFood";
+import Purchase from "../components/Purchase/Purchase";
 
 
 const router = createBrowserRouter([
@@ -34,6 +36,15 @@ const router = createBrowserRouter([
         {
           path: '/add',
           element: <AddFood></AddFood>
+        },
+        {
+          path: '/food/:id',
+          element: <SingleFood></SingleFood>,
+          loader: () => fetch(`${import.meta.env.VITE_API_URL}/add`)
+        },
+        {
+          path: '/purchase',
+          element: <Purchase></Purchase>
         }
       ]
     },
