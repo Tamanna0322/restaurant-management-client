@@ -1,11 +1,23 @@
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Food from "../Food/Food";
+import axios from "axios";
 
 
 const AllFoods = () => {
 
-    const allFoods = useLoaderData();
-    console.log(allFoods)
+     const [foods, setFoods] = useState([]);
+     useEffect(()=>{
+
+        const getFood = async () =>{
+            const {data} = await axios(`${import.meta.env.VITE_API_URL}/add`)
+            setFoods(data)
+        }
+        getFood();
+
+     },[])
+
+    
 
     return (
         <div>
@@ -25,7 +37,7 @@ const AllFoods = () => {
 
             <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
                 {
-                    allFoods.map(food => <Food key={food._id} food={food}></Food>)
+                    foods.map(food => <Food key={food._id} food={food}></Food>)
                 }
             </div>
 

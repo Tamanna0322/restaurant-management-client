@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 
 const AddFood = () => {
@@ -8,12 +9,12 @@ const AddFood = () => {
     const {user} = useContext(AuthContext);
     console.log(user)
 
-    const handleAddBtn = event =>{
+    const handleAddBtn =async event =>{
         event.preventDefault();
         const form = event.target;
 
         const photo = form.photo.value;
-        const food = form.food.value;
+        const foodName = form.foodName.value;
         const category = form.category.value;
         const quantity = form.quantity.value;
         const description = form.description.value;
@@ -21,11 +22,22 @@ const AddFood = () => {
         const origin = form.origin.value;
         const name = form.name.value;
         const email = form.email.value;
-        const newFoodItem ={photo, food, category, quantity, description, price,origin,name,email};
-          console.log(newFoodItem)
+        const newFoodItem ={photo, foodName, category, quantity, description, price,origin,name,email};
+        //   console.log(newFoodItem)
+
+        try {
+            const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/add`,
+                newFoodItem
+            )
+            console.log(data)
+             toast.success("Food Item Added");
+             form.reset();
+        }
+        catch (error) {
+            console.log(error)
+        }
        
-        toast.success("Food Item Added");
-        form.reset();
+       
     }
 
     return (
@@ -53,7 +65,7 @@ const AddFood = () => {
                        <label className="label">
                            <span className="label-text text-orange-700 lg:text-xl font-bold">Food Name</span>
                        </label>
-                       <input type="text" name="food" placeholder="Enter Food Name" className="input input-bordered"
+                       <input type="text" name="foodName" placeholder="Enter Food Name" className="input input-bordered"
                        />
                    </div>
                    {/* category name */}

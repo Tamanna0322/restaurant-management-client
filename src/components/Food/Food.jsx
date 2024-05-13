@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 const Food = ({ food }) => {
 
-    const { foodName, foodImg, category, price, quantity } = food;
+    const { foodName, photo, category, price, quantity } = food;
 
     return (
         <div>
 
             <div className='border border-orange-700 border-dotted p-3 bg-orange-50 rounded-lg'>
                 <div className=' flex h-[240px] justify-center rounded-lg'>
-                    <img className="w-full h-full rounded-lg object-cover" src={foodImg} alt="" />
+                    <img className="w-full h-full rounded-lg object-contain" src={photo} alt="" />
                 </div>
                 <h3 className='mt-5 mb-4 text-2xl text-orange-900 font-bold'>{foodName}</h3>
                 <div className='border-t mb-3 border-orange-500 border-dotted'>
