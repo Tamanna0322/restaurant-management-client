@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import register from '../../assets/images/register2.jpg';
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
@@ -10,6 +10,8 @@ const Register = () => {
 
   const {createUser, user, setUser, updateUsersProfile } = useContext(AuthContext);
   const [error, setError] = useState('');
+
+  const navigate = useNavigate();
 
   const handleRegister = e =>{
     e.preventDefault();
@@ -34,7 +36,7 @@ const Register = () => {
          updateUsersProfile(name, photo)
          .then(() => {
             setUser({...user,displayName:name,photoURL:photo,email:email})
-            // navigate('/')
+            navigate('/')
            toast.success("Registration complete")
        
          })

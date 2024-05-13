@@ -12,6 +12,8 @@ import MyAdd from "../components/MyAdd/MyAdd";
 import Update from "../components/Update/Update";
 import MyOrder from "../components/MyOrder/MyOrder";
 import Gallery from "../components/Gallery/Gallery";
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
+
 
 
 const router = createBrowserRouter([
@@ -48,7 +50,7 @@ const router = createBrowserRouter([
         },
         {
           path: '/purchase',
-          element: <Purchase></Purchase>
+          element: <PrivateRoute><Purchase></Purchase></PrivateRoute>
         },
         {
           path: '/myAdd',

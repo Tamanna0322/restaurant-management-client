@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import login from '../../assets/images/login2.jpg'
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
@@ -10,6 +10,10 @@ const Login = () => {
 
     const { signInUser, googleLogin, setUser } = useContext(AuthContext)
     const [showPass, setShowPass] = useState(false);
+
+    
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const handleLogin = e => {
         e.preventDefault();
@@ -22,8 +26,9 @@ const Login = () => {
             .then(result => {
                 setUser(result.user)
                 if (result.user) {
-                    // navigate(location?.state || '/')
+                  
                     toast.success("Login successful");
+                    navigate(location?.state || '/')
                 }
 
             })
@@ -39,9 +44,9 @@ const Login = () => {
             .then(result => {
                 if (result.user) {
                     setUser(result.user)
-                    // navigate(location?.state || '/')
+                   
                     toast.success("Login successful");
-
+                    navigate(location?.state || '/')
                 }
             })
     }

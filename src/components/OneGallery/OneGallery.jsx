@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const OneGallery = ({ gallery }) => {
-    console.log(gallery)
-
+    const {user} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log(location);
     const [showOverlay, setShowOverlay] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -36,6 +40,15 @@ const OneGallery = ({ gallery }) => {
         }
     };
 
+    const handleAddFeedback = () => {
+        if (user) {
+            setIsModalOpen(true);
+        } else {
+            return  navigate('/login', { state: { from: location } });
+        }
+    };
+
+
     return (
         <div className='border rounded-xl p-5 bg-orange-50'>
             <div className='relative overflow-hidden'
@@ -48,7 +61,7 @@ const OneGallery = ({ gallery }) => {
                         <div className='text-center'>
                             <h2 className='text-xl font-bold'>{gallery.name}</h2>
                             <div className='mt-5'>
-                                <button onClick={() => setIsModalOpen(true)} className='btn bg-orange-600 text-white border-none px-6'>Add</button>
+                                <button onClick={handleAddFeedback} className='btn bg-orange-600 text-white border-none px-6'>Add</button>
                                 {isModalOpen && (
                                     <div className='fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50'>
                                         <div className='bg-white p-6 rounded-md'>

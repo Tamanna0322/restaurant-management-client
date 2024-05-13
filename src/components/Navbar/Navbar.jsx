@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo from '../../assets/images/file.png';
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -7,6 +7,11 @@ import { AuthContext } from "../../providers/AuthProvider";
 const Navbar = () => {
 
   const { user, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    logout();
+    navigate('/'); 
+  };
 
   return (
     <div className="bg-[#C046191A]">
@@ -58,9 +63,10 @@ const Navbar = () => {
                 </li>
               </ul>
 
-              <button onClick={logout} className="btn md:ml-3 ml-1 text-orange-600 font-bold border-orange-700 bg-white  hover:bg-gradient-to-r from-orange-600 to-orange-500 hover:text-white">
+              <button onClick={handleLogout} className="btn md:ml-3 ml-1 text-orange-600 font-bold border-orange-700 bg-white  hover:bg-gradient-to-r from-orange-600 to-orange-500 hover:text-white">
                 Logout
               </button>
+              
             </div>
 
               :
