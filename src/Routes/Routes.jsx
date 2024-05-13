@@ -11,6 +11,7 @@ import Purchase from "../components/Purchase/Purchase";
 import MyAdd from "../components/MyAdd/MyAdd";
 import Update from "../components/Update/Update";
 import MyOrder from "../components/MyOrder/MyOrder";
+import Gallery from "../components/Gallery/Gallery";
 
 
 const router = createBrowserRouter([
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
         {
           path: '/myOrder',
           element: <MyOrder></MyOrder>
+        },
+        {
+          path: '/gallery',
+          element: <Gallery></Gallery>
         }
       ]
     },
