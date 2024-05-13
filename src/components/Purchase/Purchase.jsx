@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 
 const Purchase = () => {
@@ -38,6 +39,11 @@ const Purchase = () => {
 
     return (
         <div className="">
+
+<Helmet>
+                <title>FlavorFleet | Purchase</title>
+            </Helmet>
+
              <div className="border mt-16 border-orange-400 border-dashed p-8 mb-16 rounded-xl bg-orange-50">
            <div className="md:mb-5 mb-3">
                <h3 className="text-center md:text-3xl text-xl font-bold text-orange-600">FOOD PURCHASE FORM</h3>

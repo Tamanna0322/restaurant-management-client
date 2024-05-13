@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 
 const AddFood = () => {
@@ -42,6 +43,9 @@ const AddFood = () => {
 
     return (
         <div>
+             <Helmet>
+                <title>FlavorFleet | AddFood</title>
+            </Helmet>
         
         <div className="border border-orange-400 border-dashed p-8 mb-16 rounded-xl bg-orange-50">
            <div className="md:mb-5 mb-3">

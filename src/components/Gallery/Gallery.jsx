@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import OneGallery from "../OneGallery/OneGallery";
+import { Helmet } from "react-helmet-async";
 
 
 const Gallery = () => {
@@ -20,6 +21,9 @@ const Gallery = () => {
 
     return (
         <div>
+             <Helmet>
+                <title>FlavorFleet | Gallery</title>
+            </Helmet>
             <div>
                 <h3 className="lg:text-5xl md:text-3xl text-2xl font-bold text-center text-orange-700">Our Gallery Section</h3>
             </div>

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { NavLink, useLoaderData, useParams } from "react-router-dom";
 
 
@@ -12,6 +13,10 @@ const SingleFood = () => {
 
     return (
         <div className="border border-dashed border-orange-600 mt-16 mb-16 rounded-xl bg-orange-50">
+
+<Helmet>
+                <title>FlavorFleet | singleFood</title>
+            </Helmet>
 
                <div className="flex flex-col  lg:flex-row-reverse justify-between  md:p-4 p-2">
            

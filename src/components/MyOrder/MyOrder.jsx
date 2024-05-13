@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
 import Order from "../Order/Order";
+import { Helmet } from "react-helmet-async";
 
 
 const MyOrder = () => {
@@ -22,6 +23,9 @@ const MyOrder = () => {
 
     return (
         <div className="my-16">
+             <Helmet>
+                <title>FlavorFleet | MyOrderedFood</title>
+            </Helmet>
         <div className="overflow-x-auto">
             <table className="table">
                 {/* head */}

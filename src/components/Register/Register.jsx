@@ -4,6 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import register from '../../assets/images/register2.jpg';
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -52,6 +53,9 @@ const Register = () => {
 
     return (
         <div className="">
+           <Helmet>
+                <title>FlavorFleet | Register</title>
+            </Helmet>
         <div className="hero min-h-screen p-3">
         <div className="flex items-center flex-col-reverse md:flex-row lg:justify-around md:justify-between w-full h-full ">
           

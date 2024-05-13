@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Food from "../Food/Food";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 
 const AllFoods = () => {
@@ -38,6 +39,10 @@ const AllFoods = () => {
 
     return (
         <div>
+             <Helmet>
+                <title>FlavorFleet | AllFoods</title>
+            </Helmet>
+
             <div className="flex justify-center">
                 <form onSubmit={handleSearch}>
                     <fieldset className="form-control w-80">

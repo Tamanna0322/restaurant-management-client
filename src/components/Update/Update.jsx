@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 
 const Update = () => {
@@ -42,6 +43,9 @@ const Update = () => {
 
     return (
         <div className="border border-orange-400 border-dashed p-8 mb-16 rounded-xl bg-orange-50">
+             <Helmet>
+                <title>FlavorFleet | Update</title>
+            </Helmet>
         <div className="md:mb-5 mb-3">
             <h3 className="text-center md:text-3xl text-xl font-bold text-orange-500">Update Your Food ITEM</h3>
         </div>

@@ -4,6 +4,7 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import login from '../../assets/images/login2.jpg'
 import { AuthContext } from "../../providers/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -54,6 +55,9 @@ const Login = () => {
 
     return (
         <div className="">
+             <Helmet>
+                <title>FlavorFleet | Login</title>
+            </Helmet>
             <div className="flex justify-between items-center flex-col md:flex-row ">
                 <div className="lg:w-[40%] md:w-[50%] w-[70%]">
                     <div className="w-full ">
