@@ -8,6 +8,8 @@ const SingleFood = () => {
     const detail = details.find(detail => detail._id === id)
     console.log(detail)
 
+    
+
     return (
         <div className="border border-dashed border-orange-600 mt-16 mb-16 rounded-xl bg-orange-50">
 
