@@ -27,7 +27,7 @@ const Purchase = () => {
             orderedFoodItem
             )
             console.log(data)
-             toast.success("Food Item Added");
+             toast.success("Food Purchase Successfully");
              form.reset();
         }
         catch (error) {
