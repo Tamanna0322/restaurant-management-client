@@ -50,7 +50,7 @@ const OneGallery = ({ gallery }) => {
 
 
     return (
-        <div className='border rounded-xl p-5 bg-orange-50'>
+        <div className='border rounded-xl p-5 bg-orange-50 flex justify-center'>
             <div className='relative overflow-hidden'
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}>

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import TopFood from "../TopFood/TopFood";
+import { Link } from "react-router-dom";
 
 
 const TopFoods = () => {
@@ -26,6 +27,9 @@ const TopFoods = () => {
                 {
                     foods.map(food => <TopFood key={food._id} food={food}></TopFood>)
                 }
+            </div>
+            <div className="flex justify-center ">
+               <Link to='/allFoods'> <button className='btn border-none px-14 bg-gradient-to-r from-[#FFD133] to-[#C04619]'>See All</button></Link>
             </div>
         </div>
     );
