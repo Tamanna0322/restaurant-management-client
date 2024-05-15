@@ -45,7 +45,6 @@ const Login = () => {
             .then(result => {
                 if (result.user) {
                     setUser(result.user)
-                   
                     toast.success("Login successful");
                     navigate(location?.state || '/')
                 }

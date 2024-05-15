@@ -54,7 +54,7 @@ const OneGallery = ({ gallery }) => {
             <div className='relative overflow-hidden'
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}>
-                <img className='h-[300px] object-contain' src={gallery.photo}
+                <img className='h-[300px] w-full object-contain' src={gallery.photo}
                     alt="" />
                 {showOverlay && (
                     <div className='absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white'>
